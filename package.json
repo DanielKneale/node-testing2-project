@@ -12,7 +12,9 @@
   "dependencies": {
     "express": "^4.17.3",
     "knex": "^0.95.15",
-    "splite": "^0.0.0"
+    "splite": "^0.0.0",
+    "sqlite": "^4.0.25",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
