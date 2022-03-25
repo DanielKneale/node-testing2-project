@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  return knex.scheme.createTable("exotics", tbl =>{
+  return knex.schema.createTable("exotics", tbl =>{
       tbl.increments();
       tbl.string("Name", 25).unique().notNullable()
       tbl.string("Weapontype", 20).notNullable()
