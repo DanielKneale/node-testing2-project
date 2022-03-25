@@ -1,5 +1,5 @@
-const Exotics =require("./exotics-model")
-const db = require("../../data/db-config")
+const Exotic =require("../api/exotics/exotics-model")
+const db = require("../data/db-config")
 
 
 const Tolesto = {
@@ -34,29 +34,24 @@ it("correct env var",()=>{
 describe("Exotic model", ()=>{
     it("gets table with 0 entries",async ()=>{
         var data
-        Exotics.getAll()
+        Exotic.getAll()
         data = await db("exotics")
         expect(data).toHaveLength(0)
     })
     it("add exotic entries",async ()=>{
         var data
-        Exotics.add(Tolesto)
+        Exotic.add(Tolesto)
         data = await db("exotics")
         expect(data).toHaveLength(1)
 
-        Exotics.add(Temp)
+        Exotic.add(Temp)
         data = await db("exotics")
         expect(data).toHaveLength(2)
     })
-    // it("getting a specific id",async ()=>{
-    //     Exotics.add(Tolesto)
-    //     Exotics.add(Temp)
-    //     const [{id}] = Exotics.getById(2)
-        
-        
-        
-        
+    // it("delete an entry",async ()=>{     WIP
+    //     Exotic.add(Tolesto)
+    //     Exotic.add(Temp)
+    //     Exotic.remove(1)
+    //     expect(data).toHaveLength(1)
     // })
-    
-
 })
